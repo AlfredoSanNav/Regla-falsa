@@ -5,7 +5,7 @@ var fxu = Number(document.querySelector("#fxu").value);
 var btn1 = document.querySelector('#btn1');
 function formula(x){ return((Math.pow(x,3))+(Math.pow(x,2))-3*(x)-3) }
 function porcentaje(xrv, xr){ return (Math.abs(((xr-xrv)/xr)*100)) }
-function formula2(x){ return (Math.atan(x)+x-1) }
+function formula2(x){ return ((Math.atan(x))+ x - 1) }
 
 btn1.addEventListener('click', () => {
     let xl = Number(document.querySelector("#xl").value) ;
@@ -21,7 +21,7 @@ while(i < 15){
     xrv = xr
     xr = xu - ((fxu * (xl-xu))/(fxl - fxu));
     fxr = formula2(xr).toFixed(7)
-    por = (porcentaje(xrv, xr)).toFixed(7)
+    por = (porcentaje(xr, xrv)).toFixed(7)
     
     console.log("Iteración " + i)
     console.log("Xr = " + xr)
