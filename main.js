@@ -3,7 +3,7 @@ var xu = Number(document.querySelector("#xu").value);
 var btn1 = document.querySelector('#btn1');
 
 
-function porcentaje(xrv, xr){ return (Math.abs(((xr-xrv)/xr)*100)) };
+function porcentaje(xrv, xr){ return (((xr-xrv)/xr)*100) };
 
 // f(x)=e^(-x)-ln x 
 function formula1(x){ return(Math.pow(Math.E, -x) - Math.log(x)) };
@@ -17,32 +17,34 @@ btn1.addEventListener('click', () => {
     let xl = Number(document.querySelector("#xl").value) ;
     let xu = Number(document.querySelector("#xu").value);
 
-    let fxl = formula1(xl).toFixed(7)
-    let fxu = formula1(xu).toFixed(7);    
+    let fxl = formula1(xl)
+    let fxu = formula1(xu);    
     let por = 100
     let xrv = (xu - ((fxu * (xl-xu))/(fxl - fxu))).toFixed(7);
-    let i = 1
+    let i = 0
 
   
-    while (por < 1){
+    while (i < 30){
     
     let xr = xu - ((fxu * (xl-xu))/(fxl - fxu)).toFixed(7);
     let fxr = formula1(xr).toFixed(7);
-    let por = (porcentaje(xr, xrv)).toFixed(7);
+    let por = porcentaje(xr, xrv).toFixed(7);
 
     console.log(`Iteración ${i}:  xr = ${xr}  f(xr) = ${fxr}  por = ${por}` )
 
 
-    if(Math.sign(fxr) === -1 && xr > xl){
+    if(Math.sign(fxr)=== -1){
         xl = xr
     }
-    if(Math.sign(fxr) === 1 && xr < xu){
+    if(Math.sign(fxr) === 1){
         xu = xr
     }
-    
+
+    xrv = xr;
+    i++
     fxu = formula1(xu).toFixed(7);
     fxl = formula1(xl).toFixed(7);
-    xrv = xr;
+    
 }
 
 
