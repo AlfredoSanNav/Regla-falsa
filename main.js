@@ -18,19 +18,19 @@ btn1.addEventListener('click', () => {
     let xu = Number(document.querySelector("#xu").value);
 
     let fxl = formula1(xl).toFixed(7)
-    let fxu = formula1(xu);    
+    let fxu = formula1(xu).toFixed(7);    
     let por = 100
     let xrv = (xu - ((fxu * (xl-xu))/(fxl - fxu))).toFixed(7);
     let i = 1
 
   
-    while (por > 1){
+    while (por < 1){
     
     let xr = xu - ((fxu * (xl-xu))/(fxl - fxu)).toFixed(7);
     let fxr = formula1(xr).toFixed(7);
     let por = (porcentaje(xr, xrv)).toFixed(7);
 
-    Console.log(`Iteración ${i}:  xr = ${xr}  f(xr) = ${fxr}  por = ${por}` )
+    console.log(`Iteración ${i}:  xr = ${xr}  f(xr) = ${fxr}  por = ${por}` )
 
 
     if(Math.sign(fxr) === -1 && xr > xl){
