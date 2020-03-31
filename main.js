@@ -9,25 +9,28 @@ var tas = "<p> <center>";
 btn1.addEventListener('click', () => {
     let xl = Number(document.querySelector("#xl").value) ;
     let xu = Number(document.querySelector("#xu").value);
-    let ecuacion = document.querySelector("#ecuacion")
+    var ecuacion = document.querySelector("#ecuacion").value
 
     switch(ecuacion){
         case "primera":
             // f(x)=e^(-x)-ln x 
             function ecuacionElegida(x){ return(Math.pow(Math.E, -x) - Math.log(x)) };
-            break
+            console.log("primera")
+            break;
         case "segunda":
             // x^3+x^2-3x-3 
             function ecuacionElegida(x){ return((Math.pow(x,3))+(Math.pow(x,2))-3*(x)-3)}
-            break
+            console.log("segunda")
+            break;
         case "tercera":
             // f(x)=arctang(x)+x-1
             function ecuacionElegida(x){ return ((Math.atan(x))+ x - 1) };
-            break
+            console.log("tercera")
+            break;
         }
 
-    let fxl = ecuacionElegida(xl)
-    let fxu = ecuacionElegida(xu)    
+    let fxl = ecuacionElegida(xl).toFixed(7)
+    let fxu = ecuacionElegida(xu).toFixed(7)
     let por = 100
     let xrv = (xu - ((fxu * (xl-xu))/(fxl - fxu))).toFixed(7);
     let i = 0
