@@ -32,3 +32,6 @@ btn1.addEventListener("click",()=>{
         console.log(` xl = ${xl} xu = ${xu} xr = ${xr} fxl = ${fxl} fxu = ${fxu} fxr = ${fxr}`)
     }
 })
+
+
+// =Number((Math.pow(xr,3))+(Math.pow(xr,2))-(3*xr)-3)
