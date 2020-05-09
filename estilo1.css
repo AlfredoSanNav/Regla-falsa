@@ -1,0 +1,47 @@
+
+h1{
+    color: white ;
+    width: 800px;
+    margin-left: 25px;
+    padding: 10px;
+    cursor: pointer;
+
+  
+}
+
+
+h2{
+    margin-left: 75px;
+    color: rgb(255, 255, 255);
+    text-justify: 25px;
+    width: 500;
+}
+
+a{
+    color: azure;
+    text-decoration: none;
+    text-emphasis-color: rgb(255, 255, 255);
+}
+
+p{
+    color: azure;
+}
+
+label{
+    color: azure;
+}
+
+button{
+    color: azure;
+    background-image:url(imagen.jpg);
+    background-repeat:no-repeat;
+    height:100px;
+    width:100px;
+    background-position:center
+}
+
+body{
+    background-image: url("hola2.jpeg");
+    background-size: 1365px;
+    
+}
